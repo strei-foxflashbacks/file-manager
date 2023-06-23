@@ -2,6 +2,6 @@
   "name": "file-manager",
   "type": "module",
   "scripts": {
-    "start": ""
+    "start": "node src/index.js"
   }
 }
