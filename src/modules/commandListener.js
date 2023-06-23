@@ -4,8 +4,7 @@ import exitApp from './exitApp.js';
 const commandListener = async (command) => {
   switch (command) {
     case '.exit':
-      console.log('exiting...\n');
-      exitApp();
+      await exitApp();
       break;
     default:
       stdout.write('Operation failed\n');
