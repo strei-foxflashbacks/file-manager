@@ -1,5 +1,6 @@
 {
   "name": "file-manager",
+  "type": "module",
   "scripts": {
     "start": ""
   }
