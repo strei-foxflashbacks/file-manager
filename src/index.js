@@ -1,7 +1,7 @@
-import start from "./modules/start.js";
+import userEnter from "./modules/userEnter.js";
 
 const appStart = async () => {
-  await start();
+  await userEnter();
 }
 
 await appStart();
