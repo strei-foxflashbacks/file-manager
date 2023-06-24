@@ -2,6 +2,7 @@ import { stdout } from 'node:process';
 import exitApp from './exitApp.js';
 import goToFolder from './navigation/goToFolder.js';
 import goToParentFolder from './navigation/goToParentFolder.js';
+import listDirectory from './navigation/listDirectory.js';
 
 const commandListener = async (command) => {
   const instructions = command.split(' ');
@@ -13,7 +14,10 @@ const commandListener = async (command) => {
       await goToFolder(instructions[1]);
       break;
     case 'up':
-      await goToParentFolder()
+      await goToParentFolder();
+      break;
+    case 'ls':
+      await listDirectory();
       break;
     default:
       stdout.write('Operation failed\n');
