@@ -3,6 +3,7 @@ import exitApp from './exitApp.js';
 import goToFolder from './navigation/goToFolder.js';
 import goToParentFolder from './navigation/goToParentFolder.js';
 import listDirectory from './navigation/listDirectory.js';
+import osInfo from './os/osInfo.js';
 
 const commandListener = async (command) => {
   const instructions = command.split(' ');
@@ -18,6 +19,9 @@ const commandListener = async (command) => {
       break;
     case 'ls':
       await listDirectory();
+      break;
+    case 'os':
+      await osInfo(instructions[1]);
       break;
     default:
       stdout.write('Operation failed\n');
