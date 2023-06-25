@@ -2,8 +2,8 @@ import process from 'node:process';
 import path from 'path';
 
 const goToFolder = async (passedPath) => {
-  const destination = passedPath.trim().split('/').slice(-1)[0];
-  const pathToDirectory = path.join(process.cwd(), destination);
+  const destination = passedPath.trim()
+  const pathToDirectory = path.resolve(process.cwd(), destination);
   try {
     process.chdir(pathToDirectory);
   } catch {
