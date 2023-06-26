@@ -7,6 +7,7 @@ import osInfo from './os/osInfo.js';
 import readFileContent from './operatingFiles/readFileContent.js';
 import renameFile from './operatingFiles/renameFile.js';
 import createNew from './operatingFiles/createNew.js';
+import deleteFile from './operatingFiles/deleteFile.js';
 
 const commandListener = async (command) => {
   const instructions = command.split(' ');
@@ -34,6 +35,9 @@ const commandListener = async (command) => {
       break;
     case 'rn':
       await renameFile(instructions[1], instructions[2]);
+      break;
+    case 'rm':
+      await deleteFile(instructions[1]);
       break;
     default:
       stdout.write('Operation failed\n');
