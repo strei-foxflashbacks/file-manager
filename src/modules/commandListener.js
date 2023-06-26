@@ -11,6 +11,8 @@ import deleteFile from './operatingFiles/deleteFile.js';
 import copyFileTo from './operatingFiles/copyFileTo.js';
 import moveFileTo from './operatingFiles/moveFileTo.js';
 import calculateHash from './operatingFiles/calculateHash.js';
+import compressFile from './operatingFiles/compression/compressFile.js';
+import decompressFile from './operatingFiles/compression/decompressFile.js';
 
 const commandListener = async (command) => {
   const instructions = command.split(' ');
@@ -50,6 +52,12 @@ const commandListener = async (command) => {
       break;
     case 'hash':
       await calculateHash(instructions[1]);
+      break;
+    case 'compress':
+      await compressFile(instructions[1], instructions[2]);
+      break;
+    case 'decompress':
+      await decompressFile(instructions[1], instructions[2]);
       break;
     default:
       stdout.write('Operation failed\n');
