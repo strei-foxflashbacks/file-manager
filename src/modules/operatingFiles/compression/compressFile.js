@@ -5,8 +5,8 @@ import extractFileName from '../../../utils/extractFileName.js';
 
 const compressFile = async (pathToFile, pathToDestination) => {
   try {
-    const sourcePath = path.join(process.cwd(), pathToFile);
-    const destinationPath = path.join(pathToDestination, `${extractFileName(sourcePath)}.br`);
+    const sourcePath = path.resolve(process.cwd(), pathToFile);
+    const destinationPath = path.resolve('/', pathToDestination, `${extractFileName(sourcePath)}.br`);
 
     return new Promise((resolve) => {
       const sourceStream = fs.createReadStream(sourcePath);
