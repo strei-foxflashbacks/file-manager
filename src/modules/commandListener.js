@@ -5,6 +5,7 @@ import goToParentFolder from './navigation/goToParentFolder.js';
 import listDirectory from './navigation/listDirectory.js';
 import osInfo from './os/osInfo.js';
 import readFileContent from './operatingFiles/readFileContent.js';
+import renameFile from './operatingFiles/renameFile.js';
 
 const commandListener = async (command) => {
   const instructions = command.split(' ');
@@ -26,6 +27,9 @@ const commandListener = async (command) => {
       break;
     case 'cat':
       await readFileContent(instructions[1]);
+      break;
+    case 'rn':
+      await renameFile(instructions[1], instructions[2]);
       break;
     default:
       stdout.write('Operation failed\n');
