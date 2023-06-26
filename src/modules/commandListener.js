@@ -10,6 +10,7 @@ import createNew from './operatingFiles/createNew.js';
 import deleteFile from './operatingFiles/deleteFile.js';
 import copyFileTo from './operatingFiles/copyFileTo.js';
 import moveFileTo from './operatingFiles/moveFileTo.js';
+import calculateHash from './operatingFiles/calculateHash.js';
 
 const commandListener = async (command) => {
   const instructions = command.split(' ');
@@ -46,6 +47,9 @@ const commandListener = async (command) => {
       break;
     case 'rm':
       await deleteFile(instructions[1]);
+      break;
+    case 'hash':
+      await calculateHash(instructions[1]);
       break;
     default:
       stdout.write('Operation failed\n');
