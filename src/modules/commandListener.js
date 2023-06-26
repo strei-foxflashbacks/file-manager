@@ -9,6 +9,7 @@ import renameFile from './operatingFiles/renameFile.js';
 import createNew from './operatingFiles/createNew.js';
 import deleteFile from './operatingFiles/deleteFile.js';
 import copyFileTo from './operatingFiles/copyFileTo.js';
+import moveFileTo from './operatingFiles/moveFileTo.js';
 
 const commandListener = async (command) => {
   const instructions = command.split(' ');
@@ -39,6 +40,9 @@ const commandListener = async (command) => {
       break;
     case 'cp':
       await copyFileTo(instructions[1], instructions[2]);
+      break;
+    case 'mv':
+      await moveFileTo(instructions[1], instructions[2]);
       break;
     case 'rm':
       await deleteFile(instructions[1]);
