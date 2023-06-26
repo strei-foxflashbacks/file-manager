@@ -6,6 +6,7 @@ const renameFile = async (oldName, newName) => {
     const pathToFile = path.join(process.cwd(), oldName);
     const newFileName = path.join(process.cwd(), newName);
     await fs.rename(pathToFile, newFileName);
+    console.log('Selected file succesfully renamed!');
   } catch {
     console.log('Operation failed');
   }

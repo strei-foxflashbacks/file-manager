@@ -5,6 +5,7 @@ const readFileContent = async (destination) => {
   const pathToFile = path.join(process.cwd(), destination);
   return new Promise((resolve) => {
     const data = fs.createReadStream(pathToFile, 'utf-8');
+    console.log('Reading file...\n');
     data.on('data', (chunk) => {
       console.log(chunk);
     });
