@@ -14,6 +14,10 @@ const moveFileTo = async (pathToFile, pathToMove) => {
         console.log('Operation failed');
         resolve();
       });
+      destinationFileStream.on('error', () => {
+        console.log('Operation failed');
+        resolve();
+      });
       destinationFileStream.on('finish', () => {
         fs.unlink(sourcePath, (err) => {
           if (err) {

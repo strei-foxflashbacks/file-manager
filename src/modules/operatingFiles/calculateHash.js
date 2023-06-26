@@ -1,9 +1,11 @@
 import path from 'path';
+import fs from 'fs/promises';
 const { createHmac } = await import('node:crypto');
 
 const calculateHash = async (pathToFile) => {
   try {
     const fileToCalcPath = path.join(process.cwd(), pathToFile);
+    await fs.access(fileToCalcPath);
     try {
       const secret = 'RSS';
       const hash = createHmac('sha256', secret)

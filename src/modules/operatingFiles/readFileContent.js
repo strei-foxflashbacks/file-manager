@@ -12,6 +12,7 @@ const readFileContent = async (destination) => {
       });
       data.on('error', () => {
         console.log('Operation failed');
+        resolve();
       })
       data.on('end', () => {
         resolve();

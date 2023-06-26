@@ -18,6 +18,10 @@ const compressFile = async (pathToFile, pathToDestination) => {
         console.log('Operation failed');
         resolve();
       });
+      destinationStream.on('error', () => {
+        console.log('Operation failed');
+        resolve();
+      });
       destinationStream.on('finish', () => {
         console.log('File compressed successfully!');
         resolve();

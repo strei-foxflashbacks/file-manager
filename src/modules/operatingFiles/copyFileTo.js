@@ -14,6 +14,10 @@ const copyFileTo = async (pathToFile, pathToCopy) => {
         console.log('Operation failed');
         resolve();
       });
+      destinationFileStream.on('error', () => {
+        console.log('Operation failed');
+        resolve();
+      });
       destinationFileStream.on('finish', () => {
         console.log('File copied successfully!');
         resolve();
