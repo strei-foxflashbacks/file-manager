@@ -22,7 +22,7 @@ const osInfo = async (flag) => {
       await getCPUArchitecture();
       break;
     default:
-      console.log('Operation failed');
+      console.log('Invalid input\n');
   }
 }
 export default osInfo;

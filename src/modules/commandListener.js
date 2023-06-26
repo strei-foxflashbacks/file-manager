@@ -60,7 +60,7 @@ const commandListener = async (command) => {
       await decompressFile(instructions[1], instructions[2]);
       break;
     default:
-      stdout.write('Operation failed\n');
+      stdout.write('Invalid input\n');
   }
 }
 export default commandListener;
